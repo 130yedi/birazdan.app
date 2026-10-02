@@ -203,3 +203,15 @@ footer nav a {
   padding: 10px 0;
   color: var(--text);
 }
+
+/* A note for the review of a draft; none is published. */
+.todo {
+  padding: 12px 16px;
+  border: 2px dashed var(--text-2);
+  border-radius: 16px;
+}
+
+.page main > a {
+  display: inline-block;
+  text-decoration: none;
+}

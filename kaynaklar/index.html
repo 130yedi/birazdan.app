@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kaynaklar ve lisanslar · Birazdan</title>
+    <meta name="description" content="Birazdan'ın kullandığı veriler, lisansları ve OpenStreetMap verisini nasıl işlediği." />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12161d" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="../favicon.png" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="page">
+    <main>
+      <a href="../" aria-label="Birazdan ana sayfa">
+        <header>
+          <svg class="mark" viewBox="176 64 160 384" aria-hidden="true">
+            <rect x="188" y="76" width="136" height="360" rx="68" fill="none" stroke="currentColor" stroke-width="24" />
+            <circle cx="256" cy="256" r="44" fill="#F5A524" />
+          </svg>
+          <strong>Birazdan</strong>
+        </header>
+      </a>
+
+      <h1>Kaynaklar ve lisanslar</h1>
+      <p class="updated">Son güncelleme: 3 Ekim 2026</p>
+      <p>Birazdan resmi bir uygulama değildir. İETT, Metro İstanbul, Şehir Hatları, TCDD, İBB veya belediyelerle bir bağlantısı yoktur.</p>
+
+      <h2>İBB Açık Veri Portalı</h2>
+      <p>Atıf 4.0 Uluslararası (CC BY 4.0) kapsamında lisanslanan kamu sektörü bilgilerini içerir. Lisans: <a href="https://data.ibb.gov.tr/license">İBB Açık Veri Lisansı</a>. Kullandığımız veriler:</p>
+      <ul>
+        <li>İETT'nin hat, durak, güzergâh, planlanan sefer saatleri ve duyuru web servisleri</li>
+        <li><a href="https://data.ibb.gov.tr/dataset/iett-hat-guzergahlari">İETT Hat Güzergahları Verisi</a> (otobüs hatlarının haritadaki çizgileri)</li>
+        <li>Metro İstanbul'un hat, istasyon ve sefer saati web servisleri</li>
+        <li><a href="https://data.ibb.gov.tr/dataset/rayli-ulasim-hatlari-vektor-verisi">Raylı Sistem Hatları Vektör Verisi</a>, <a href="https://data.ibb.gov.tr/dataset/rayli-sistem-istasyon-noktalari-verisi">Raylı Sistem İstasyon Noktaları Verisi</a> ve <a href="https://data.ibb.gov.tr/dataset/deniz-ulasim-istasyonlari-vektor-verisi">Deniz Ulaşım İstasyonları Vektör Verisi</a> (raylı hat çizgileri, istasyon ve iskele konumları)</li>
+      </ul>
+
+      <h2>OpenStreetMap</h2>
+      <p>Aramadaki cadde, semt ve önemli yerler ile metrobüs peronlarına giden yaya yolları <a href="https://www.openstreetmap.org/copyright">© OpenStreetMap katkıda bulunanlar</a>'dan alınır ve Open Database License (ODbL) ile lisanslıdır.</p>
+      <h3>Bu veriyi nasıl işliyoruz</h3>
+      <p>Haftada bir, Overpass API ile İstanbul il sınırı içindeki adlı yolları, semtleri ve önemli yerleri, metrobüs istasyonlarının 300 metre çevresindeki yaya yollarını alırız. Aynı adı taşıyan, birbirine değen ya da uçları 150 metreden yakın yol parçalarını tek yol olarak birleştiririz; numaralı sokakları, askerî hava üslerini ve metro istasyonlarını almayız. Bir yolun ilçesini çevresindeki İETT duraklarından buluruz. Metrobüs peronlarının girişlerini, köprü, tünel ve merdivenler ayrıldığında peronun kaldığı kısa yaya parçasından dışarı çıkılan ilk noktalar olarak çıkarırız. Bu yolla oluşan veritabanını isteyen herkese ODbL ile veririz: <a href="mailto:destek@birazdan.app">destek@birazdan.app</a></p>
+
+      <h2>Diğer kaynaklar</h2>
+      <ul>
+        <li>Tahmini varış süreleri: İETT'nin herkese açık <a href="https://iett.istanbul">"Otobüsüm Nerede?"</a> sayfası</li>
+        <li>Vapur sefer saatleri: <a href="https://sehirhatlari.istanbul">Şehir Hatları</a></li>
+        <li>Marmaray sefer saatleri: TCDD Taşımacılık'ın yayımlanan tarifesi</li>
+        <li>Harita, yürüme yolları ve yer araması: Apple Haritalar</li>
+      </ul>
+
+      <h2>Yazı tipi</h2>
+      <p>Atkinson Hyperlegible, Braille Institute of America. <a href="../fonts/OFL.txt">SIL Open Font License 1.1</a>.</p>
+    </main>
+
+    <footer>
+      <nav>
+        <a href="../gizlilik/">Gizlilik politikası</a>
+        <a href="../destek/">Destek</a>
+        <a href="../kaynaklar/">Kaynaklar ve lisanslar</a>
+      </nav>
+      <p>Birazdan resmi bir uygulama değildir. İETT, Metro İstanbul, Şehir Hatları, TCDD, İBB veya belediyelerle bir bağlantısı yoktur.</p>
+    </footer>
+  </body>
+</html>
