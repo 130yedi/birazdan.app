@@ -1,0 +1,205 @@
+/* Birazdan's colors and type, as in the app (see the app repo's CLAUDE.md, "Tasarım"). */
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+:root {
+  --bg: #ffffff;
+  --surface: #f3f4f6;
+  --divider: #e3e6ea;
+  --text: #1d2430;
+  --text-2: #5a6474;
+  --brand: #3a4658;
+  --on-brand: #ffffff;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #12161d;
+    --surface: #1d232d;
+    --divider: #262d38;
+    --text: #eef1f5;
+    --text-2: #a3acb9;
+    --brand: #dde2e8;
+    --on-brand: #12161d;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 "Atkinson Hyperlegible", system-ui, -apple-system, sans-serif;
+}
+
+main,
+footer {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main {
+  padding-top: 56px;
+  padding-bottom: 32px;
+}
+
+a {
+  color: inherit;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 21px;
+  margin-top: 40px;
+}
+
+h3 {
+  font-size: 17px;
+  margin-top: 24px;
+}
+
+p,
+ul {
+  margin: 12px 0 0;
+}
+
+ul {
+  padding-left: 22px;
+}
+
+li + li {
+  margin-top: 6px;
+}
+
+.secondary {
+  color: var(--text-2);
+}
+
+/* The logo's capsule and lamp; the capsule takes the brand gray of the theme. */
+.mark {
+  display: block;
+  width: 40px;
+  height: 96px;
+  color: var(--brand);
+}
+
+.hero .mark {
+  margin-bottom: 28px;
+}
+
+.lead {
+  font-size: 21px;
+  margin-top: 16px;
+}
+
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.pill {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-top: 40px;
+  display: grid;
+  gap: 12px;
+}
+
+.features li {
+  margin: 0;
+  padding: 18px 20px;
+  border-radius: 22px;
+  background: var(--surface);
+}
+
+.features strong {
+  display: block;
+  font-size: 19px;
+}
+
+.features span {
+  color: var(--text-2);
+}
+
+/* A text page (privacy, KVKK, support, sources). */
+.page header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+  text-decoration: none;
+}
+
+.page header .mark {
+  width: 20px;
+  height: 48px;
+}
+
+.updated {
+  color: var(--text-2);
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+footer {
+  padding-top: 24px;
+  padding-bottom: 40px;
+  border-top: 1px solid var(--divider);
+  color: var(--text-2);
+  font-size: 15px;
+}
+
+footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 18px;
+  margin-bottom: 12px;
+}
+
+footer nav a {
+  display: inline-block;
+  padding: 10px 0;
+  color: var(--text);
+}
