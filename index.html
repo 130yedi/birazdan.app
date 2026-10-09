@@ -4,54 +4,121 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Birazdan</title>
-    <meta name="description" content="Otobüs kaç dakika sonra gelecek? Durakta beklerken birkaç saniyede öğren. İstanbul için canlı varış süreleri ve yol tarifi." />
+    <meta name="description" content="Sıradaki sefer kaç dakika sonra? Otobüs, metrobüs, metro, tramvay, Marmaray ve vapur için canlı süreler ve yol tarifi. İstanbul'da." />
     <meta property="og:title" content="Birazdan" />
-    <meta property="og:description" content="Otobüs kaç dakika sonra gelecek? Durakta beklerken birkaç saniyede öğren." />
+    <meta property="og:description" content="Sıradaki sefer kaç dakika sonra? Durakta beklerken birkaç saniyede öğren." />
     <meta name="apple-itunes-app" content="app-id=6818536979" />
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#12161d" media="(prefers-color-scheme: dark)" />
     <link rel="icon" href="favicon.png" />
     <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://api.birazdan.app" crossorigin />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="home">
     <main>
       <section class="hero">
-        <svg class="mark" viewBox="176 64 160 384" role="img" aria-label="Birazdan">
-          <rect x="188" y="76" width="136" height="360" rx="68" fill="none" stroke="currentColor" stroke-width="24" />
-          <circle cx="256" cy="256" r="44" fill="#F5A524" />
-        </svg>
-        <h1>Birazdan</h1>
-        <p class="lead">Otobüs kaç dakika sonra gelecek? Durakta beklerken birkaç saniyede öğren.</p>
+        <div class="hero-text">
+          <svg class="mark" viewBox="176 64 160 384" role="img" aria-label="Birazdan">
+            <rect x="188" y="76" width="136" height="360" rx="68" fill="none" stroke="currentColor" stroke-width="24" />
+            <circle cx="256" cy="256" r="44" fill="#F5A524" />
+          </svg>
+          <h1>Sıradaki sefer kaç dakika sonra?</h1>
+          <p class="lead">Otobüs, metrobüs, metro, tramvay, Marmaray ve vapur. Durakta, istasyonda ya da iskelede beklerken birkaç saniyede öğren.</p>
+          <p class="pills">
+            <a class="pill pill-primary" href="https://apps.apple.com/tr/app/birazdan/id6818536979">App Store'dan indir</a>
+            <span class="pill">Android yakında</span>
+          </p>
+        </div>
+
+        <!-- A real stop's arrivals, live from the app's own server (live.js). -->
+        <section class="board" aria-labelledby="board-title" data-board>
+          <div class="board-top">
+            <span class="board-now">Şu an</span>
+            <div class="board-stops" role="tablist" aria-label="Durak">
+              <button type="button" role="tab" data-stop="222002" data-name="Üsküdar Marmaray" data-side="Otobüs · Harem yönü" aria-selected="true">Otobüs</button>
+              <button type="button" role="tab" data-stop="rail-122" data-name="Üsküdar" data-side="M5 ve Marmaray istasyonu" aria-selected="false">Raylı</button>
+              <button type="button" role="tab" data-stop="ferry-kadikoy" data-name="Kadıköy" data-side="Vapur iskelesi" aria-selected="false">Vapur</button>
+            </div>
+          </div>
+          <h2 id="board-title" class="board-name" data-board-name>Üsküdar Marmaray</h2>
+          <p class="board-side" data-board-side>Otobüs · Harem yönü</p>
+          <p class="board-status" data-status aria-live="polite">Süreler yükleniyor…</p>
+          <ol class="board-rows" data-rows></ol>
+          <p class="board-note">Uygulamanın gösterdiği süreler: otobüste İETT'nin anlık verisinden, raylı sistem ve vapurda tarifeden. 20 saniyede bir yenilenir.</p>
+        </section>
+      </section>
+
+      <section class="trip" aria-labelledby="trip-title">
+        <h2 id="trip-title">Kapıdan çıkmadan inene kadar</h2>
+        <ol class="trip-line">
+          <li>
+            <div class="trip-text">
+              <h3>Nereye gideceğini sor</h3>
+              <p>Otobüs, metrobüs, metro, tramvay, Marmaray ve vapurla; otobüs süreleri trafiğe göre. Gideceğin yeri durak, cadde, semt ya da adres yazarak bul.</p>
+            </div>
+            <img src="img/yol-tarifi.webp" width="600" height="1304" loading="lazy" alt="Yol tarifi ekranı: konumundan işe üç seçenek, binilecek hatlar ve varış saatleri." />
+          </li>
+          <li>
+            <div class="trip-text">
+              <h3>Durakta süreyi gör</h3>
+              <p>Sıradaki otobüs ve sonra gelecekler, kaç dakika kaldığıyla. Her satırda sürenin canlı konumdan mı, tarifeden mi geldiği yazar.</p>
+            </div>
+            <img src="img/durak.webp" width="600" height="1304" loading="lazy" alt="Durak ekranı: Beşiktaş Çarşı'ya gelen otobüsler ve dakikaları." />
+          </li>
+          <li>
+            <div class="trip-text">
+              <h3>Birazdan haber ver</h3>
+              <p>Otobüsün gelmesine 3, 5, 10 ya da 15 dakika kala bildirim al. Süre kilit ekranında geri sayar; durakta beklemen gerekmez.</p>
+            </div>
+            <img src="img/hatirlatici.webp" width="600" height="1304" loading="lazy" alt="Birazdan haber ver paneli: kaç dakika kala haber verileceğinin seçimi ve bildirimin önizlemesi." />
+          </li>
+          <li>
+            <div class="trip-text">
+              <h3>Yolculuğu başlat</h3>
+              <p>Hangi durakta ineceğin ve kaç durak kaldığı hep ekranda. Konum yalnızca yolculuk sürerken kullanılır.</p>
+            </div>
+            <img src="img/takip.webp" width="600" height="1304" loading="lazy" alt="Haritada takip ekranı: Üsküdar Sahil Yolu durağında in, üç durak kaldı." />
+          </li>
+          <li>
+            <div class="trip-text">
+              <h3>İneceğin durak geliyor</h3>
+              <p>Telefon cebindeyken de: sıradaki durak inmen gereken durak olunca haber verilir.</p>
+            </div>
+            <img src="img/kilit.webp" width="600" height="1304" loading="lazy" alt="Kilit ekranı: canlı takipte sıradaki durak ve İnmeye hazırlan bildirimi." />
+          </li>
+        </ol>
+      </section>
+
+      <section class="states" aria-labelledby="states-title">
+        <h2 id="states-title">Süre nereden geliyor?</h2>
+        <p class="secondary">Birazdan bir sürenin neye dayandığını gizlemez; dakikanın yanındaki işaret söyler.</p>
+        <ul class="state-list">
+          <li>
+            <span class="dot dot-live" aria-hidden="true"></span>
+            <div>
+              <strong>Canlı</strong>
+              <span>Süre, otobüsün canlı konumundan hesaplandı.</span>
+            </div>
+          </li>
+          <li>
+            <span class="dot dot-scheduled" aria-hidden="true"></span>
+            <div>
+              <strong>Tarifeden</strong>
+              <span>Canlı konum yok; süre sefer saatinden tahmin edildi. Metro, Marmaray ve vapur süreleri tarifeden gelir.</span>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="private" aria-labelledby="private-title">
+        <h2 id="private-title">Hesap yok, reklam yok, izleme yok</h2>
+        <p>Kaydettiğin yerler ve favorilerin yalnızca telefonunda kalır. Konumun yakındaki durakları bulmak için yuvarlanarak gönderilir ve kaydedilmez. Ayrıntılar <a href="gizlilik/">gizlilik politikasında</a>.</p>
         <p class="pills">
           <a class="pill pill-primary" href="https://apps.apple.com/tr/app/birazdan/id6818536979">App Store'dan indir</a>
-          <span class="pill">Android yakında</span>
           <span class="pill">Şimdilik İstanbul'da</span>
         </p>
       </section>
-
-      <ul class="features">
-        <li>
-          <strong>Canlı varış süreleri</strong>
-          <span>Otobüslerin kaç dakika sonra geleceği İETT'nin anlık verisinden. Süre canlı konumdan mı, tarifeden mi, her satırda görünür.</span>
-        </li>
-        <li>
-          <strong>Yol tarifi</strong>
-          <span>Otobüs, metrobüs, metro, tramvay, Marmaray ve vapurla; otobüs süreleri trafiğe göre.</span>
-        </li>
-        <li>
-          <strong>Birazdan haber ver</strong>
-          <span>Otobüsün gelmesine kaç dakika kala uyarılmak istediğini seç, gerisini uygulama takip etsin.</span>
-        </li>
-        <li>
-          <strong>İneceğin durak geliyor</strong>
-          <span>Yolculuğu başlat; telefon cebindeyken de ineceğin durak yaklaşınca haber verilir.</span>
-        </li>
-        <li>
-          <strong>Kilit ekranında ve ana ekranda</strong>
-          <span>Süreler ve yolculuğun adımları uygulamayı açmadan da görünür.</span>
-        </li>
-      </ul>
     </main>
 
     <footer>
@@ -64,5 +131,7 @@
       <p>Birazdan resmi bir uygulama değildir. İETT, Metro İstanbul, Şehir Hatları, TCDD, İBB veya belediyelerle bir bağlantısı yoktur.</p>
       <p>İletişim: <a href="mailto:destek@birazdan.app">destek@birazdan.app</a></p>
     </footer>
+
+    <script src="live.js" defer></script>
   </body>
 </html>
