@@ -46,6 +46,11 @@
   box-sizing: border-box;
 }
 
+/* What a script shows later stays hidden until then, whatever its display. */
+[hidden] {
+  display: none !important;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
 }
@@ -142,6 +147,10 @@ li + li {
   border-radius: 999px;
   background: var(--surface);
   font-weight: 700;
+}
+
+a.pill {
+  text-decoration: none;
 }
 
 /* The download link: the app's primary button (brand gray, full capsule). */

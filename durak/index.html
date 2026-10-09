@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sıradaki seferler · Birazdan</title>
+    <meta name="description" content="Bir durağın, istasyonun ya da iskelenin sıradaki seferleri, canlı." />
+    <meta property="og:title" content="Sıradaki seferler · Birazdan" />
+    <meta property="og:description" content="Bu duraktan sıradaki seferler kaç dakika sonra? Canlı süreler, uygulama olmadan da." />
+    <!-- One page for every stop (?id=): not one for search engines to list. -->
+    <meta name="robots" content="noindex" />
+    <meta name="apple-itunes-app" content="app-id=6818536979" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#12161d" media="(prefers-color-scheme: dark)" />
+    <link rel="icon" href="../favicon.png" />
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+    <link rel="preconnect" href="https://api.birazdan.app" crossorigin />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body class="page">
+    <main>
+      <a href="../" aria-label="Birazdan ana sayfa">
+        <header>
+          <svg class="mark" viewBox="176 64 160 384" aria-hidden="true">
+            <rect x="188" y="76" width="136" height="360" rx="68" fill="none" stroke="currentColor" stroke-width="24" />
+            <circle cx="256" cy="256" r="44" fill="#F5A524" />
+          </svg>
+          <strong>Birazdan</strong>
+        </header>
+      </a>
+
+      <!-- A shared stop's arrivals, live from the app's own server (durak.js). -->
+      <section class="board" aria-labelledby="stop-name" data-stop-board>
+        <div class="board-top">
+          <span class="board-now">Şu an</span>
+        </div>
+        <h1 id="stop-name" class="board-name" data-name>Sıradaki seferler</h1>
+        <p class="board-side" data-side></p>
+        <p class="board-status" data-status aria-live="polite">Süreler yükleniyor…</p>
+        <ol class="board-rows" data-rows></ol>
+        <p class="board-note">Süreler 20 saniyede bir yenilenir: otobüste İETT'nin anlık verisinden, raylı sistem ve vapurda tarifeden.</p>
+      </section>
+
+      <p class="pills">
+        <a class="pill pill-primary" href="https://apps.apple.com/tr/app/birazdan/id6818536979">App Store'dan indir</a>
+        <a class="pill" data-open-app hidden>Uygulamada aç</a>
+      </p>
+      <p class="updated">Birazdan'da bu durağı sabitleyip ana sayfada görebilir, otobüs yaklaşınca haber alabilirsin.</p>
+    </main>
+    <footer>
+      <nav>
+        <a href="../gizlilik/">Gizlilik politikası</a>
+        <a href="../kvkk/">KVKK aydınlatma metni</a>
+        <a href="../destek/">Destek</a>
+        <a href="../kaynaklar/">Kaynaklar ve lisanslar</a>
+      </nav>
+      <p>Birazdan resmi bir uygulama değildir. İETT, Metro İstanbul, Şehir Hatları, TCDD, İBB veya belediyelerle bir bağlantısı yoktur.</p>
+    </footer>
+    <script src="durak.js" defer></script>
+  </body>
+</html>
