@@ -96,6 +96,7 @@
       const res = await fetch(API + encodeURIComponent(id));
       if (res.status === 404) {
         statusEl.textContent = 'Bu durak bulunamadı. Durak kodu değişmiş olabilir.';
+        openApp.hidden = true;
         clearInterval(timer);
         return false;
       }
