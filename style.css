@@ -139,6 +139,13 @@ li + li {
   font-weight: 700;
 }
 
+/* The download link: the app's primary button (brand gray, full capsule). */
+.pill-primary {
+  background: var(--brand);
+  color: var(--on-brand);
+  text-decoration: none;
+}
+
 .features {
   list-style: none;
   padding: 0;
