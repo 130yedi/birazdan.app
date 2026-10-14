@@ -1,15 +1,23 @@
 /* Birazdan's colors and type, as in the app (see the app repo's CLAUDE.md, "Tasarım"). */
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("fonts/AtkinsonHyperlegibleNext-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Atkinson Hyperlegible";
-  src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("fonts/AtkinsonHyperlegibleNext-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Line codes and minutes: monospaced, so they line up and a countdown does not shift (as in the app). */
+@font-face {
+  font-family: "Atkinson Hyperlegible Mono";
+  src: url("fonts/AtkinsonHyperlegibleMono-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
 }
@@ -59,7 +67,7 @@ body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
-  font: 17px/1.6 "Atkinson Hyperlegible", system-ui, -apple-system, sans-serif;
+  font: 17px/1.6 "Atkinson Hyperlegible Next", system-ui, -apple-system, sans-serif;
 }
 
 main,
@@ -367,15 +375,25 @@ footer nav a {
   border-top: 0;
 }
 
-.badge {
-  min-width: 58px;
-  padding: 6px 12px;
-  border-radius: 999px;
-  background: var(--brand);
-  color: var(--on-brand);
+/* A line: its icon and its code in plain letters (lines.js), the codes lined up in a column. */
+.line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 96px;
+}
+
+.line-icon {
+  flex: none;
+  width: 28px;
+  height: 28px;
+}
+
+.line-code {
+  color: var(--brand);
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
   font-weight: 700;
-  font-size: 16px;
-  text-align: center;
+  font-size: 17px;
 }
 
 .headsign {
@@ -397,6 +415,7 @@ footer nav a {
 }
 
 .min {
+  font-family: "Atkinson Hyperlegible Mono", ui-monospace, monospace;
   font-size: 26px;
   font-weight: 700;
   line-height: 1;

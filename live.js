@@ -41,16 +41,11 @@
     const li = document.createElement('li');
     const live = a.status === 'live';
     li.innerHTML =
-      '<span class="badge"></span><span class="headsign"></span>' +
+      '<span class="headsign"></span>' +
       '<span class="time"><span class="dot ' + (live ? 'dot-live' : 'dot-scheduled') + '" aria-hidden="true"></span>' +
       '<span class="min"></span><span class="unit">dk</span></span>';
-    const badge = li.querySelector('.badge');
-    badge.textContent = a.route_code;
-    // Rail lines and ferries come in their own colors, as in the app.
-    if (a.color) {
-      badge.style.background = a.color;
-      badge.style.color = a.text_color || '#ffffff';
-    }
+    // The line's icon and code, as in the app (lines.js).
+    li.prepend(window.lineMark(a));
     li.querySelector('.headsign').textContent = a.headsign || '';
     li.querySelector('.min').textContent = String(a.minutes);
     li.setAttribute(
